@@ -9,6 +9,7 @@
 	"DownloadFeaturesOpen": "Не загружать",
 	"pendingequalfailed": false,
 	"platformversiongenerateepf": "C:/Program Files (x86)/1cv8/8.3.10.2772/bin",
+	"usersettingsprovider": "FILE",
 	"commandtoopenfeatureintexteditor": "\"C:\\Program Files (x86)\\Notepad++\\notepad++.exe\" %Feature% -n%LineNumber%",
 	"RunningScripts": {
 		"makestepsasync": false,
@@ -45,6 +46,14 @@
 				"PathToInfobase": "File=\"C:\\Bases\\8.3.15\";",
 				"PortTestClient": 48003,
 				"AddItionalParameters": "  /TestManager",
+				"ClientType": "Thin",
+				"ComputerName": ""
+			},
+			{
+				"Name": "TestEnJson",
+				"PathToInfobase": "File=\"C:\\Bases\\TestEnJson\";",
+				"PortTestClient": 48003,
+				"AddItionalParameters": "111",
 				"ClientType": "Thin",
 				"ComputerName": ""
 			}
@@ -89,15 +98,15 @@
 	"logtotext": true,
 	"logstepstotext": false,
 	"logerrorstotext": true,
-	"CollectDataStateActiveFormError": true,
-	"CollectDataStatusAllFormsOfError": true,
+	"getactiveformdataonerror": true,
+	"getallformsdataonerror": true,
 	"textlogname": ".\\tools\\ServiceBases\\log8316.txt",
 	"texterrorslogname": "C:\\Temp\\ЛогОшибокVA",
 	"commandscreenshot": "\"C:\\Program Files (x86)\\IrfanView\\i_view32.exe\" /capture=1 /convert=",
 	"onerrorscreenshot": true,
 	"onerrorscreenshoteverywindow": true,
 	"outputscreenshot": ".\\tools\\ServiceBases\\ScreenShots",
-	"videcreate": true,
+	"videocreate": true,
 	"VideoRecording": {
 		"videopath": "C:\\Temp\\Video\\111",
 		"comandrecvideo": "\"C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe\" screen://  -I rc --rc-quiet --rc-host=127.0.0.1:8082 --nommx :screen-mouse-image=\"<screenmouseimage>\" :screen-fps=<fps> :screen-width=<screenwidth> :screen-height=<screenheight> :screen-top=0 :screen-left=0 :screen-caching=100 :sout=#transcode{vcodec=mp4v,vb=400,fps=<fps>,scale=1,width=<screenwidth>,height=<screenheight>,acodec=none}:duplicate{dst=std{access=file,mux=mp4,dst=<dst>}}",

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
@@ -22,20 +22,20 @@
 			<v8:content>Известни стъпки</v8:content>
 		</v8:item>
 		<v8:item>
+			<v8:lang>de</v8:lang>
+			<v8:content>Bekannte Schritte</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>es</v8:lang>
+			<v8:content>Conocidos los pasos</v8:content>
+		</v8:item>
+		<v8:item>
 			<v8:lang>et</v8:lang>
 			<v8:content>Tuntud samme</v8:content>
 		</v8:item>
 		<v8:item>
 			<v8:lang>fr</v8:lang>
 			<v8:content>Célèbres étapes</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>ka</v8:lang>
-			<v8:content>ცნობილი ნაბიჯები</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>de</v8:lang>
-			<v8:content>Bekannte Schritte</v8:content>
 		</v8:item>
 		<v8:item>
 			<v8:lang>hu</v8:lang>
@@ -46,12 +46,16 @@
 			<v8:content>Noti passi</v8:content>
 		</v8:item>
 		<v8:item>
-			<v8:lang>lv</v8:lang>
-			<v8:content>Zināmi soļi</v8:content>
+			<v8:lang>ka</v8:lang>
+			<v8:content>ცნობილი ნაბიჯები</v8:content>
 		</v8:item>
 		<v8:item>
 			<v8:lang>lt</v8:lang>
 			<v8:content>Žinomos veiksmus</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>lv</v8:lang>
+			<v8:content>Zināmi soļi</v8:content>
 		</v8:item>
 		<v8:item>
 			<v8:lang>mn</v8:lang>
@@ -63,15 +67,11 @@
 		</v8:item>
 		<v8:item>
 			<v8:lang>ro</v8:lang>
-			<v8:content>Cunoscut de pași</v8:content>
+			<v8:content>Pași Cunoscuti</v8:content>
 		</v8:item>
 		<v8:item>
 			<v8:lang>sl</v8:lang>
 			<v8:content>Slavni koraki</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>es</v8:lang>
-			<v8:content>Conocidos los pasos</v8:content>
 		</v8:item>
 		<v8:item>
 			<v8:lang>sv</v8:lang>
@@ -91,8 +91,8 @@
 		<ChildItems>
 			<Button name="ФормаВыгрузитьШагиВJSON" id="70">
 				<Type>CommandBarButton</Type>
-				<OnlyInAllActions>false</OnlyInAllActions>
 				<CommandName>Form.Command.ВыгрузитьШагиВJSON</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаВыгрузитьШагиВJSONРасширеннаяПодсказка" id="71"/>
 			</Button>
 		</ChildItems>
@@ -104,6 +104,7 @@
 	</Events>
 	<ChildItems>
 		<UsualGroup name="ГруппаПоиска" id="88">
+			<Group>Horizontal</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПоискаРасширеннаяПодсказка" id="89"/>
@@ -132,20 +133,20 @@
 							<v8:content>Намери стъпки</v8:content>
 						</v8:item>
 						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Finden Schritte</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>es</v8:lang>
+							<v8:content>Encontrar los pasos</v8:content>
+						</v8:item>
+						<v8:item>
 							<v8:lang>et</v8:lang>
 							<v8:content>Leida samme</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>fr</v8:lang>
 							<v8:content>Trouver les étapes</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>მოძებნა ნაბიჯები</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Finden Schritte</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>hu</v8:lang>
@@ -156,12 +157,16 @@
 							<v8:content>Trovare i punti</v8:content>
 						</v8:item>
 						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Atrast soļi</v8:content>
+							<v8:lang>ka</v8:lang>
+							<v8:content>მოძებნა ნაბიჯები</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>lt</v8:lang>
 							<v8:content>Rasti veiksmus</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>lv</v8:lang>
+							<v8:content>Atrast soļi</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>mn</v8:lang>
@@ -178,10 +183,6 @@
 						<v8:item>
 							<v8:lang>sl</v8:lang>
 							<v8:content>Našli navodila</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>Encontrar los pasos</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sv</v8:lang>
@@ -205,14 +206,13 @@
 						</v8:item>
 						<v8:item>
 							<v8:lang>en</v8:lang>
-							<v8:content>Enter the search text or part of the phrase</v8:content>
+							<v8:content>Enter a search text or a phrase part</v8:content>
 						</v8:item>
 					</InputHint>
 					<ContextMenu name="НайтиШагиКонтекстноеМеню" id="50"/>
 					<ExtendedTooltip name="НайтиШагиРасширеннаяПодсказка" id="51"/>
 					<Events>
 						<Event name="OnChange">НайтиШагиПриИзменении</Event>
-						<Event name="Clearing">НайтиШагиОчистка</Event>
 					</Events>
 				</InputField>
 				<Button name="КнопкаНайтиШаги" id="94">
@@ -223,160 +223,275 @@
 				</Button>
 			</ChildItems>
 		</UsualGroup>
-		<CheckBoxField name="ПоказыватьСлужебныеШаги" id="46">
-			<DataPath>ПоказыватьСлужебныеШаги</DataPath>
-			<TitleLocation>Right</TitleLocation>
-			<CheckBoxType>Auto</CheckBoxType>
-			<ContextMenu name="ПоказыватьСлужебныеШагиКонтекстноеМеню" id="47"/>
-			<ExtendedTooltip name="ПоказыватьСлужебныеШагиРасширеннаяПодсказка" id="52"/>
-			<Events>
-				<Event name="OnChange">ПоказыватьСлужебныеШагиПриИзменении</Event>
-			</Events>
-		</CheckBoxField>
-		<CheckBoxField name="ПоказатьШагиНаРусском" id="76">
-			<DataPath>ПоказатьШагиНаРусском</DataPath>
-			<TitleLocation>Right</TitleLocation>
-			<CheckBoxType>Auto</CheckBoxType>
-			<ContextMenu name="ПоказатьШагиНаРусскомКонтекстноеМеню" id="77"/>
-			<ExtendedTooltip name="ПоказатьШагиНаРусскомРасширеннаяПодсказка" id="78"/>
-			<Events>
-				<Event name="OnChange">ПоказатьШагиНаРусскомПриИзменении</Event>
-			</Events>
-		</CheckBoxField>
-		<CheckBoxField name="ПоказыватьУстаревшиеШаги" id="85">
-			<DataPath>ПоказыватьУстаревшиеШаги</DataPath>
-			<TitleLocation>Right</TitleLocation>
-			<CheckBoxType>Auto</CheckBoxType>
-			<ContextMenu name="ПоказыватьУстаревшиеШагиКонтекстноеМеню" id="86"/>
-			<ExtendedTooltip name="ПоказыватьУстаревшиеШагиРасширеннаяПодсказка" id="87"/>
-			<Events>
-				<Event name="OnChange">ПоказыватьУстаревшиеШагиПриИзменении</Event>
-			</Events>
-		</CheckBoxField>
-		<Button name="ПоказатьПеревод" id="68">
-			<Type>UsualButton</Type>
-			<CommandName>Form.Command.ПоказатьПеревод</CommandName>
-			<ExtendedTooltip name="ПоказатьПереводРасширеннаяПодсказка" id="69"/>
-		</Button>
-		<Table name="ДеревоШагов" id="1">
-			<Representation>Tree</Representation>
-			<CommandBarLocation>None</CommandBarLocation>
-			<ReadOnly>true</ReadOnly>
-			<AutoInsertNewRow>true</AutoInsertNewRow>
-			<EnableStartDrag>true</EnableStartDrag>
-			<EnableDrag>true</EnableDrag>
-			<DataPath>ДеревоШагов</DataPath>
-			<SearchStringLocation>None</SearchStringLocation>
-			<ViewStatusLocation>None</ViewStatusLocation>
-			<SearchControlLocation>None</SearchControlLocation>
-			<ContextMenu name="ДеревоШаговКонтекстноеМеню" id="2"/>
-			<AutoCommandBar name="ДеревоШаговКоманднаяПанель" id="3"/>
-			<ExtendedTooltip name="ДеревоШаговРасширеннаяПодсказка" id="53"/>
-			<SearchStringAddition name="ДеревоШаговСтрокаПоиска" id="54">
-				<AdditionSource>
-					<Item>ДеревоШагов</Item>
-					<Type>SearchStringRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="ДеревоШаговСтрокаПоискаКонтекстноеМеню" id="55"/>
-				<ExtendedTooltip name="ДеревоШаговСтрокаПоискаРасширеннаяПодсказка" id="56"/>
-			</SearchStringAddition>
-			<ViewStatusAddition name="ДеревоШаговСостояниеПросмотра" id="57">
-				<AdditionSource>
-					<Item>ДеревоШагов</Item>
-					<Type>ViewStatusRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="ДеревоШаговСостояниеПросмотраКонтекстноеМеню" id="58"/>
-				<ExtendedTooltip name="ДеревоШаговСостояниеПросмотраРасширеннаяПодсказка" id="59"/>
-			</ViewStatusAddition>
-			<SearchControlAddition name="ДеревоШаговУправлениеПоиском" id="60">
-				<AdditionSource>
-					<Item>ДеревоШагов</Item>
-					<Type>SearchControl</Type>
-				</AdditionSource>
-				<ContextMenu name="ДеревоШаговУправлениеПоискомКонтекстноеМеню" id="61"/>
-				<ExtendedTooltip name="ДеревоШаговУправлениеПоискомРасширеннаяПодсказка" id="62"/>
-			</SearchControlAddition>
-			<Events>
-				<Event name="Selection">ДеревоШаговВыбор</Event>
-			</Events>
+		<UsualGroup name="ГруппаНастройкиВидимыхШагов" id="124">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки видимых шагов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки видимых шагов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНастройкиВидимыхШаговРасширеннаяПодсказка" id="125"/>
 			<ChildItems>
-				<ColumnGroup name="ДеревоШаговГруппа" id="74">
+				<CheckBoxField name="ПоказыватьСлужебныеШаги" id="46">
+					<DataPath>ПоказыватьСлужебныеШаги</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПоказыватьСлужебныеШагиКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ПоказыватьСлужебныеШагиРасширеннаяПодсказка" id="52"/>
+					<Events>
+						<Event name="OnChange">ПоказыватьСлужебныеШагиПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<CheckBoxField name="ПоказатьШагиНаРусском" id="76">
+					<DataPath>ПоказатьШагиНаРусском</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПоказатьШагиНаРусскомКонтекстноеМеню" id="77"/>
+					<ExtendedTooltip name="ПоказатьШагиНаРусскомРасширеннаяПодсказка" id="78"/>
+					<Events>
+						<Event name="OnChange">ПоказатьШагиНаРусскомПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<CheckBoxField name="ПоказыватьУстаревшиеШаги" id="85">
+					<DataPath>ПоказыватьУстаревшиеШаги</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПоказыватьУстаревшиеШагиКонтекстноеМеню" id="86"/>
+					<ExtendedTooltip name="ПоказыватьУстаревшиеШагиРасширеннаяПодсказка" id="87"/>
+					<Events>
+						<Event name="OnChange">ПоказыватьУстаревшиеШагиПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<Button name="ПоказатьПеревод" id="68">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ПоказатьПеревод</CommandName>
+					<ExtendedTooltip name="ПоказатьПереводРасширеннаяПодсказка" id="69"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДеревоШагов" id="104">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа дерево шагов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа дерево шагов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДеревоШаговРасширеннаяПодсказка" id="105"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаДеревоСОписанием" id="108">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Описание шага</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Step description</v8:content>
+							<v8:content>Группа дерево с описанием</v8:content>
 						</v8:item>
 					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа дерево с описанием</v8:content>
+						</v8:item>
+					</ToolTip>
 					<Group>Horizontal</Group>
-					<ExtendedTooltip name="ДеревоШаговГруппаРасширеннаяПодсказка" id="75"/>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДеревоСОписаниемРасширеннаяПодсказка" id="109"/>
 					<ChildItems>
-						<InputField name="ДеревоШаговПредставлениеТестаОригинал" id="79">
-							<DataPath>ДеревоШагов.ПредставлениеТестаОригинал</DataPath>
-							<Visible>false</Visible>
-							<EditMode>EnterOnInput</EditMode>
-							<AutoCellHeight>true</AutoCellHeight>
-							<ContextMenu name="ДеревоШаговПредставлениеТестаОригиналКонтекстноеМеню" id="80"/>
-							<ExtendedTooltip name="ДеревоШаговПредставлениеТестаОригиналРасширеннаяПодсказка" id="81"/>
-						</InputField>
-						<InputField name="ДеревоШаговОписаниеШагаОригинал" id="82">
-							<DataPath>ДеревоШагов.ОписаниеШагаОригинал</DataPath>
-							<Visible>false</Visible>
-							<EditMode>EnterOnInput</EditMode>
-							<AutoCellHeight>true</AutoCellHeight>
-							<ContextMenu name="ДеревоШаговОписаниеШагаОригиналКонтекстноеМеню" id="83"/>
-							<ExtendedTooltip name="ДеревоШаговОписаниеШагаОригиналРасширеннаяПодсказка" id="84"/>
-						</InputField>
-						<ColumnGroup name="Группа1" id="96">
-							<Group>InCell</Group>
-							<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="97"/>
+						<Table name="ДеревоШагов" id="1">
+							<Representation>Tree</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ReadOnly>true</ReadOnly>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ДеревоШагов</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<ContextMenu name="ДеревоШаговКонтекстноеМеню" id="2"/>
+							<AutoCommandBar name="ДеревоШаговКоманднаяПанель" id="3"/>
+							<ExtendedTooltip name="ДеревоШаговРасширеннаяПодсказка" id="53"/>
+							<SearchStringAddition name="ДеревоШаговСтрокаПоиска" id="54">
+								<AdditionSource>
+									<Item>ДеревоШагов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоШаговСтрокаПоискаКонтекстноеМеню" id="55"/>
+								<ExtendedTooltip name="ДеревоШаговСтрокаПоискаРасширеннаяПодсказка" id="56"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДеревоШаговСостояниеПросмотра" id="57">
+								<AdditionSource>
+									<Item>ДеревоШагов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоШаговСостояниеПросмотраКонтекстноеМеню" id="58"/>
+								<ExtendedTooltip name="ДеревоШаговСостояниеПросмотраРасширеннаяПодсказка" id="59"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДеревоШаговУправлениеПоиском" id="60">
+								<AdditionSource>
+									<Item>ДеревоШагов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоШаговУправлениеПоискомКонтекстноеМеню" id="61"/>
+								<ExtendedTooltip name="ДеревоШаговУправлениеПоискомРасширеннаяПодсказка" id="62"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ДеревоШаговВыбор</Event>
+							</Events>
 							<ChildItems>
-								<InputField name="ДеревоШаговТипШага" id="14">
-									<DataPath>ДеревоШагов.ТипШага</DataPath>
+								<ColumnGroup name="ДеревоШаговГруппа" id="74">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Описание шага</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Step description</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ro</v8:lang>
+											<v8:content>Descriere pas</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<ExtendedTooltip name="ДеревоШаговГруппаРасширеннаяПодсказка" id="75"/>
+									<ChildItems>
+										<InputField name="ДеревоШаговПредставлениеТестаОригинал" id="79">
+											<DataPath>ДеревоШагов.ПредставлениеТестаОригинал</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoCellHeight>true</AutoCellHeight>
+											<ContextMenu name="ДеревоШаговПредставлениеТестаОригиналКонтекстноеМеню" id="80"/>
+											<ExtendedTooltip name="ДеревоШаговПредставлениеТестаОригиналРасширеннаяПодсказка" id="81"/>
+										</InputField>
+										<ColumnGroup name="ГруппаДеревоШаговТипШагаИПредставлениеТеста" id="96">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа дерево шагов тип шага и представление теста</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа дерево шагов тип шага и представление теста</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>InCell</Group>
+											<ExtendedTooltip name="ГруппаДеревоШаговТипШагаИПредставлениеТестаРасширеннаяПодсказка" id="97"/>
+											<ChildItems>
+												<InputField name="ДеревоШаговТипШага" id="14">
+													<DataPath>ДеревоШагов.ТипШага</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>15</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="ДеревоШаговТипШагаКонтекстноеМеню" id="15"/>
+													<ExtendedTooltip name="ДеревоШаговТипШагаРасширеннаяПодсказка" id="63"/>
+												</InputField>
+												<InputField name="ДеревоШаговПредставлениеТеста" id="20">
+													<DataPath>ДеревоШагов.ПредставлениеТеста</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<AutoCellHeight>true</AutoCellHeight>
+													<ContextMenu name="ДеревоШаговПредставлениеТестаКонтекстноеМеню" id="21"/>
+													<ExtendedTooltip name="ДеревоШаговПредставлениеТестаРасширеннаяПодсказка" id="64"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ДеревоШаговОтступ" id="121">
+									<DataPath>ДеревоШагов.Отступ</DataPath>
+									<Enabled>false</Enabled>
+									<TitleLocation>None</TitleLocation>
 									<EditMode>EnterOnInput</EditMode>
-									<Width>15</Width>
-									<HorizontalStretch>false</HorizontalStretch>
-									<ContextMenu name="ДеревоШаговТипШагаКонтекстноеМеню" id="15"/>
-									<ExtendedTooltip name="ДеревоШаговТипШагаРасширеннаяПодсказка" id="63"/>
-								</InputField>
-								<InputField name="ДеревоШаговПредставлениеТеста" id="20">
-									<DataPath>ДеревоШагов.ПредставлениеТеста</DataPath>
-									<EditMode>EnterOnInput</EditMode>
-									<AutoCellHeight>true</AutoCellHeight>
-									<ContextMenu name="ДеревоШаговПредставлениеТестаКонтекстноеМеню" id="21"/>
-									<ExtendedTooltip name="ДеревоШаговПредставлениеТестаРасширеннаяПодсказка" id="64"/>
+									<ContextMenu name="ДеревоШаговОтступКонтекстноеМеню" id="122"/>
+									<ExtendedTooltip name="ДеревоШаговОтступРасширеннаяПодсказка" id="123"/>
 								</InputField>
 							</ChildItems>
-						</ColumnGroup>
-						<InputField name="ДеревоШаговОписаниеШага" id="23">
-							<DataPath>ДеревоШагов.ОписаниеШага</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<AutoCellHeight>true</AutoCellHeight>
-							<ContextMenu name="ДеревоШаговОписаниеШагаКонтекстноеМеню" id="24"/>
-							<ExtendedTooltip name="ДеревоШаговОписаниеШагаРасширеннаяПодсказка" id="65"/>
-						</InputField>
-						<InputField name="ДеревоШаговПолныйТипШага" id="26">
-							<DataPath>ДеревоШагов.ПолныйТипШага</DataPath>
-							<Visible>false</Visible>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ДеревоШаговПолныйТипШагаКонтекстноеМеню" id="27"/>
-							<ExtendedTooltip name="ДеревоШаговПолныйТипШагаРасширеннаяПодсказка" id="66"/>
-						</InputField>
-						<InputField name="ДеревоШаговИмяEPF" id="29">
-							<DataPath>ДеревоШагов.ИмяФайла</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<Width>10</Width>
-							<HorizontalStretch>false</HorizontalStretch>
-							<ContextMenu name="ДеревоШаговИмяEPFКонтекстноеМеню" id="30"/>
-							<ExtendedTooltip name="ДеревоШаговИмяEPFРасширеннаяПодсказка" id="67"/>
-						</InputField>
+						</Table>
+						<UsualGroup name="ГруппаОписания" id="116">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дополнительно</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Additionally</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа описания</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаОписанияРасширеннаяПодсказка" id="117"/>
+							<ChildItems>
+								<InputField name="ДеревоШаговИмяФайлаПоле" id="101">
+									<DataPath>Items.ДеревоШагов.CurrentData.ИмяФайла</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Файл</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>File</v8:content>
+										</v8:item>
+									</Title>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<OpenButton>true</OpenButton>
+									<ContextMenu name="ДеревоШаговИмяФайлаПолеКонтекстноеМеню" id="102"/>
+									<ExtendedTooltip name="ДеревоШаговИмяФайлаПолеРасширеннаяПодсказка" id="103"/>
+									<Events>
+										<Event name="Opening">ДеревоШаговИмяФайлаПолеОткрытие</Event>
+									</Events>
+								</InputField>
+								<InputField name="ДеревоШаговОписаниеШагаОригинал" id="118">
+									<DataPath>Items.ДеревоШагов.CurrentData.ОписаниеШагаОригинал</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<TitleLocation>None</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MultiLine>true</MultiLine>
+									<ContextMenu name="ДеревоШаговОписаниеШагаОригиналКонтекстноеМеню" id="119"/>
+									<ExtendedTooltip name="ДеревоШаговОписаниеШагаОригиналРасширеннаяПодсказка" id="120"/>
+								</InputField>
+								<InputField name="ДеревоШаговОписаниеШага" id="98">
+									<DataPath>Items.ДеревоШагов.CurrentData.ОписаниеШага</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<TitleLocation>None</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MultiLine>true</MultiLine>
+									<ContextMenu name="ДеревоШаговОписаниеШагаКонтекстноеМеню" id="99"/>
+									<ExtendedTooltip name="ДеревоШаговОписаниеШагаРасширеннаяПодсказка" id="100"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
 					</ChildItems>
-				</ColumnGroup>
+				</UsualGroup>
 			</ChildItems>
-		</Table>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
@@ -393,7 +508,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>Tree steps</v8:content>
+					<v8:content>Steps tree</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -423,20 +538,20 @@
 							<v8:content>Тип</v8:content>
 						</v8:item>
 						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Art</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>es</v8:lang>
+							<v8:content>El tipo de</v8:content>
+						</v8:item>
+						<v8:item>
 							<v8:lang>et</v8:lang>
 							<v8:content>Tüüp</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>fr</v8:lang>
 							<v8:content>Type</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>ტიპი</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Art</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>hu</v8:lang>
@@ -447,12 +562,16 @@
 							<v8:content>Tipo</v8:content>
 						</v8:item>
 						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Tips</v8:content>
+							<v8:lang>ka</v8:lang>
+							<v8:content>ტიპი</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>lt</v8:lang>
 							<v8:content>Tipas</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>lv</v8:lang>
+							<v8:content>Tips</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>mn</v8:lang>
@@ -469,10 +588,6 @@
 						<v8:item>
 							<v8:lang>sl</v8:lang>
 							<v8:content>Vrsta</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>El tipo de</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sv</v8:lang>
@@ -518,20 +633,20 @@
 							<v8:content>Името на процедурата</v8:content>
 						</v8:item>
 						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Der name der Prozedur</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>es</v8:lang>
+							<v8:content>Nombre del procedimiento</v8:content>
+						</v8:item>
+						<v8:item>
 							<v8:lang>et</v8:lang>
 							<v8:content>Protseduuri nimi</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>fr</v8:lang>
 							<v8:content>Le nom de la procédure</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>სახელი პროცედურა</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Der name der Prozedur</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>hu</v8:lang>
@@ -542,12 +657,16 @@
 							<v8:content>Il nome della procedura</v8:content>
 						</v8:item>
 						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Procedūras nosaukums</v8:content>
+							<v8:lang>ka</v8:lang>
+							<v8:content>სახელი პროცედურა</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>lt</v8:lang>
 							<v8:content>Procedūros vardas</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>lv</v8:lang>
+							<v8:content>Procedūras nosaukums</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>mn</v8:lang>
@@ -559,15 +678,11 @@
 						</v8:item>
 						<v8:item>
 							<v8:lang>ro</v8:lang>
-							<v8:content>Numele procedurii</v8:content>
+							<v8:content>Denumire procedura</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sl</v8:lang>
 							<v8:content>Ime postopek</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>Nombre del procedimiento</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sv</v8:lang>
@@ -613,20 +728,20 @@
 							<v8:content>Стъпка</v8:content>
 						</v8:item>
 						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Schritt</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>es</v8:lang>
+							<v8:content>Paso</v8:content>
+						</v8:item>
+						<v8:item>
 							<v8:lang>et</v8:lang>
 							<v8:content>Samm</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>fr</v8:lang>
 							<v8:content>Étape</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>ნაბიჯი</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Schritt</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>hu</v8:lang>
@@ -637,12 +752,16 @@
 							<v8:content>Passo</v8:content>
 						</v8:item>
 						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Solis</v8:content>
+							<v8:lang>ka</v8:lang>
+							<v8:content>ნაბიჯი</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>lt</v8:lang>
 							<v8:content>Žingsnis</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>lv</v8:lang>
+							<v8:content>Solis</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>mn</v8:lang>
@@ -659,10 +778,6 @@
 						<v8:item>
 							<v8:lang>sl</v8:lang>
 							<v8:content>Korak</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>Paso</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sv</v8:lang>
@@ -708,20 +823,20 @@
 							<v8:content>Описание</v8:content>
 						</v8:item>
 						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Beschreibung</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>es</v8:lang>
+							<v8:content>Descripción</v8:content>
+						</v8:item>
+						<v8:item>
 							<v8:lang>et</v8:lang>
 							<v8:content>Kirjeldus</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>fr</v8:lang>
 							<v8:content>Description</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>აღწერა</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Beschreibung</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>hu</v8:lang>
@@ -732,12 +847,16 @@
 							<v8:content>Descrizione</v8:content>
 						</v8:item>
 						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Apraksts</v8:content>
+							<v8:lang>ka</v8:lang>
+							<v8:content>აღწერა</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>lt</v8:lang>
 							<v8:content>Aprašymas</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>lv</v8:lang>
+							<v8:content>Apraksts</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>mn</v8:lang>
@@ -754,10 +873,6 @@
 						<v8:item>
 							<v8:lang>sl</v8:lang>
 							<v8:content>Opis</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>Descripción</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sv</v8:lang>
@@ -803,20 +918,20 @@
 							<v8:content>Пълен тип на терена</v8:content>
 						</v8:item>
 						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Vollständige schritttyp</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>es</v8:lang>
+							<v8:content>Completa el tipo de paso</v8:content>
+						</v8:item>
+						<v8:item>
 							<v8:lang>et</v8:lang>
 							<v8:content>Täielik tüüpi sammu</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>fr</v8:lang>
 							<v8:content>Plein type d'étape</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>სრული ნაბიჯი ტიპი</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Vollständige schritttyp</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>hu</v8:lang>
@@ -827,12 +942,16 @@
 							<v8:content>Completa tipo di passaggio</v8:content>
 						</v8:item>
 						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Pilna tips soļi</v8:content>
+							<v8:lang>ka</v8:lang>
+							<v8:content>სრული ნაბიჯი ტიპი</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>lt</v8:lang>
 							<v8:content>Visą tipas žingsnio</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>lv</v8:lang>
+							<v8:content>Pilna tips soļi</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>mn</v8:lang>
@@ -844,15 +963,11 @@
 						</v8:item>
 						<v8:item>
 							<v8:lang>ro</v8:lang>
-							<v8:content>Tipul plin de pas</v8:content>
+							<v8:content>Tipul plin pasului</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sl</v8:lang>
 							<v8:content>Celotno korak tip</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>Completa el tipo de paso</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sv</v8:lang>
@@ -898,20 +1013,20 @@
 							<v8:content>Име на файл</v8:content>
 						</v8:item>
 						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dateiname</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>es</v8:lang>
+							<v8:content>Nombre de archivo</v8:content>
+						</v8:item>
+						<v8:item>
 							<v8:lang>et</v8:lang>
 							<v8:content>Faili nimi</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>fr</v8:lang>
 							<v8:content>Nom de fichier</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>ფაილის სახელი</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Dateiname</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>hu</v8:lang>
@@ -922,12 +1037,16 @@
 							<v8:content>Il nome del file</v8:content>
 						</v8:item>
 						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Faila nosaukums</v8:content>
+							<v8:lang>ka</v8:lang>
+							<v8:content>ფაილის სახელი</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>lt</v8:lang>
 							<v8:content>Failo pavadinimas</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>lv</v8:lang>
+							<v8:content>Faila nosaukums</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>mn</v8:lang>
@@ -939,15 +1058,11 @@
 						</v8:item>
 						<v8:item>
 							<v8:lang>ro</v8:lang>
-							<v8:content>Nume de fișier</v8:content>
+							<v8:content>Nume fișier</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sl</v8:lang>
 							<v8:content>Ime datoteke</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>Nombre de archivo</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sv</v8:lang>
@@ -979,6 +1094,10 @@
 						<v8:item>
 							<v8:lang>en</v8:lang>
 							<v8:content>Language</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ro</v8:lang>
+							<v8:content>Limba</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -1012,20 +1131,20 @@
 							<v8:content>Описание на оригинала</v8:content>
 						</v8:item>
 						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Beschreibung das Original</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>es</v8:lang>
+							<v8:content>Descripción de la original</v8:content>
+						</v8:item>
+						<v8:item>
 							<v8:lang>et</v8:lang>
 							<v8:content>Kirjeldus originaal</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>fr</v8:lang>
 							<v8:content>Description de l'original</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>აღწერა ორიგინალური</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Beschreibung das Original</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>hu</v8:lang>
@@ -1036,12 +1155,16 @@
 							<v8:content>Descrizione originale</v8:content>
 						</v8:item>
 						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Apraksts oriģināls</v8:content>
+							<v8:lang>ka</v8:lang>
+							<v8:content>აღწერა ორიგინალური</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>lt</v8:lang>
 							<v8:content>Aprašymas originalas</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>lv</v8:lang>
+							<v8:content>Apraksts oriģināls</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>mn</v8:lang>
@@ -1053,15 +1176,11 @@
 						</v8:item>
 						<v8:item>
 							<v8:lang>ro</v8:lang>
-							<v8:content>Descriere originalul</v8:content>
+							<v8:content>Descriere original</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sl</v8:lang>
 							<v8:content>Opis izvirna</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>Descripción de la original</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sv</v8:lang>
@@ -1107,20 +1226,20 @@
 							<v8:content>Стъпка оригинал</v8:content>
 						</v8:item>
 						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Schritt Original</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>es</v8:lang>
+							<v8:content>Paso original</v8:content>
+						</v8:item>
+						<v8:item>
 							<v8:lang>et</v8:lang>
 							<v8:content>Samm originaal</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>fr</v8:lang>
 							<v8:content>Étape original</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>ნაბიჯი ორიგინალური</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Schritt Original</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>hu</v8:lang>
@@ -1131,12 +1250,16 @@
 							<v8:content>Passo originale</v8:content>
 						</v8:item>
 						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Solis oriģināls</v8:content>
+							<v8:lang>ka</v8:lang>
+							<v8:content>ნაბიჯი ორიგინალური</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>lt</v8:lang>
 							<v8:content>Žingsnis originalas</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>lv</v8:lang>
+							<v8:content>Solis oriģināls</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>mn</v8:lang>
@@ -1153,10 +1276,6 @@
 						<v8:item>
 							<v8:lang>sl</v8:lang>
 							<v8:content>Korak original</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>Paso original</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sv</v8:lang>
@@ -1202,20 +1321,20 @@
 							<v8:content>Името на снипета</v8:content>
 						</v8:item>
 						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Name Schnipsel</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>es</v8:lang>
+							<v8:content>El nombre de снипета</v8:content>
+						</v8:item>
+						<v8:item>
 							<v8:lang>et</v8:lang>
 							<v8:content>Nimi снипета</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>fr</v8:lang>
 							<v8:content>Le nom de снипета</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>სახელი snippet</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Name Schnipsel</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>hu</v8:lang>
@@ -1226,12 +1345,16 @@
 							<v8:content>Nome снипета</v8:content>
 						</v8:item>
 						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Nosaukums снипета</v8:content>
+							<v8:lang>ka</v8:lang>
+							<v8:content>სახელი snippet</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>lt</v8:lang>
 							<v8:content>Vardas снипета</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>lv</v8:lang>
+							<v8:content>Nosaukums снипета</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>mn</v8:lang>
@@ -1243,15 +1366,11 @@
 						</v8:item>
 						<v8:item>
 							<v8:lang>ro</v8:lang>
-							<v8:content>Numele снипета</v8:content>
+							<v8:content>Numele snippet-ului</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sl</v8:lang>
 							<v8:content>Ime delček</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>El nombre de снипета</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sv</v8:lang>
@@ -1274,6 +1393,30 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="ТипШагаВДереве" id="11">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Отступ" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отступ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>1</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="ТаблицаИзвестныхStepDefinition" id="3">
@@ -1284,7 +1427,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>The known definition table step</v8:content>
+					<v8:content>Known step definition table</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1314,20 +1457,20 @@
 							<v8:content>Име на файл</v8:content>
 						</v8:item>
 						<v8:item>
+							<v8:lang>de</v8:lang>
+							<v8:content>Dateiname</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>es</v8:lang>
+							<v8:content>Nombre de archivo</v8:content>
+						</v8:item>
+						<v8:item>
 							<v8:lang>et</v8:lang>
 							<v8:content>Faili nimi</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>fr</v8:lang>
 							<v8:content>Nom de fichier</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>ფაილის სახელი</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Dateiname</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>hu</v8:lang>
@@ -1338,12 +1481,16 @@
 							<v8:content>Il nome del file</v8:content>
 						</v8:item>
 						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Faila nosaukums</v8:content>
+							<v8:lang>ka</v8:lang>
+							<v8:content>ფაილის სახელი</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>lt</v8:lang>
 							<v8:content>Failo pavadinimas</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>lv</v8:lang>
+							<v8:content>Faila nosaukums</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>mn</v8:lang>
@@ -1355,15 +1502,11 @@
 						</v8:item>
 						<v8:item>
 							<v8:lang>ro</v8:lang>
-							<v8:content>Nume de fișier</v8:content>
+							<v8:content>Nume fișier</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sl</v8:lang>
 							<v8:content>Ime datoteke</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>Nombre de archivo</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>sv</v8:lang>
@@ -1394,6 +1537,10 @@
 						</v8:item>
 						<v8:item>
 							<v8:lang>en</v8:lang>
+							<v8:content>ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ro</v8:lang>
 							<v8:content>Id</v8:content>
 						</v8:item>
 					</Title>
@@ -1413,7 +1560,7 @@
 						</v8:item>
 						<v8:item>
 							<v8:lang>en</v8:lang>
-							<v8:content>Line is a real procedure</v8:content>
+							<v8:content>Real procedure string</v8:content>
 						</v8:item>
 						<v8:item>
 							<v8:lang>vi</v8:lang>
@@ -1438,6 +1585,10 @@
 							<v8:lang>en</v8:lang>
 							<v8:content>Settings</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>ro</v8:lang>
+							<v8:content>Parametri</v8:content>
+						</v8:item>
 					</Title>
 					<Type/>
 				</Column>
@@ -1449,7 +1600,7 @@
 						</v8:item>
 						<v8:item>
 							<v8:lang>en</v8:lang>
-							<v8:content>The string to search for</v8:content>
+							<v8:content>String to search</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -1487,7 +1638,11 @@
 						</v8:item>
 						<v8:item>
 							<v8:lang>en</v8:lang>
-							<v8:content>The transaction</v8:content>
+							<v8:content>Transaction</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ro</v8:lang>
+							<v8:content>Tranzacția</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -1508,6 +1663,10 @@
 							<v8:lang>en</v8:lang>
 							<v8:content>Step description</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>ro</v8:lang>
+							<v8:content>Descriere pas</v8:content>
+						</v8:item>
 					</Title>
 					<Type>
 						<v8:Type>xs:string</v8:Type>
@@ -1525,7 +1684,11 @@
 						</v8:item>
 						<v8:item>
 							<v8:lang>en</v8:lang>
-							<v8:content>The step type</v8:content>
+							<v8:content>Step type</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ro</v8:lang>
+							<v8:content>Tipul pas</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -1569,6 +1732,15 @@
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
+				<Column name="ТипШагаВДереве" id="12">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="ПоказыватьСлужебныеШаги" id="4">
@@ -1594,20 +1766,20 @@
 					<v8:content>Показване на служебни стъпки</v8:content>
 				</v8:item>
 				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Das zeigen die dienstlichen Schritte</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>es</v8:lang>
+					<v8:content>Mostrar las utilidades de los pasos</v8:content>
+				</v8:item>
+				<v8:item>
 					<v8:lang>et</v8:lang>
 					<v8:content>Näita teenuse samme</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>fr</v8:lang>
 					<v8:content>Afficher les utilitaires étapes</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>შოუ სამსახურის ნაბიჯები</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Das zeigen die dienstlichen Schritte</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>hu</v8:lang>
@@ -1618,12 +1790,16 @@
 					<v8:content>Mostra di utilità passi</v8:content>
 				</v8:item>
 				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Rādīt pakalpojumu darbības</v8:content>
+					<v8:lang>ka</v8:lang>
+					<v8:content>შოუ სამსახურის ნაბიჯები</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>lt</v8:lang>
 					<v8:content>Rodyti paslaugų žingsniai</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>lv</v8:lang>
+					<v8:content>Rādīt pakalpojumu darbības</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>mn</v8:lang>
@@ -1635,15 +1811,11 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>ro</v8:lang>
-					<v8:content>Arăta de serviciu pași</v8:content>
+					<v8:content>Arăta pași de serviciu</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>sl</v8:lang>
 					<v8:content>Prikaži storitev koraki</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>Mostrar las utilidades de los pasos</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>sv</v8:lang>
@@ -1670,7 +1842,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>The filter tree steps</v8:content>
+					<v8:content>Steps tree filter</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1689,7 +1861,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>Language of gherkin generator</v8:content>
+					<v8:content>Gherkin generator language</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>am</v8:lang>
@@ -1704,20 +1876,20 @@
 					<v8:content>Език генератор gherkin</v8:content>
 				</v8:item>
 				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Sprache gherkin generator</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>es</v8:lang>
+					<v8:content>El idioma del generador gherkin</v8:content>
+				</v8:item>
+				<v8:item>
 					<v8:lang>et</v8:lang>
 					<v8:content>Keel generaator gherkin</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>fr</v8:lang>
 					<v8:content>La langue de l'alternateur gherkin</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>ენა გენერატორი gherkin</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Sprache gherkin generator</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>hu</v8:lang>
@@ -1728,12 +1900,16 @@
 					<v8:content>Il linguaggio del generatore gherkin</v8:content>
 				</v8:item>
 				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Valoda ģeneratora gherkin</v8:content>
+					<v8:lang>ka</v8:lang>
+					<v8:content>ენა გენერატორი gherkin</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>lt</v8:lang>
 					<v8:content>Kalba generatorius gherkin</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>lv</v8:lang>
+					<v8:content>Valoda ģeneratora gherkin</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>mn</v8:lang>
@@ -1745,15 +1921,11 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>ro</v8:lang>
-					<v8:content>Limba generator gherkin</v8:content>
+					<v8:content>Limba generator Gherkin</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>sl</v8:lang>
 					<v8:content>Jezik generator kumare za vlaganje</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>El idioma del generador gherkin</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>sv</v8:lang>
@@ -1784,7 +1956,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>Tools catalog</v8:content>
+					<v8:content>Tools directory</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>vi</v8:lang>
@@ -1807,7 +1979,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>Layout template translation</v8:content>
+					<v8:content>Translation</v8:content>
 				</v8:item>
 			</Title>
 			<Type/>
@@ -1820,7 +1992,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>Binary data file transfer</v8:content>
+					<v8:content>Binary translation file data</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1839,7 +2011,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>Cache translation table</v8:content>
+					<v8:content>Translation table cache</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1858,7 +2030,11 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>Is linux</v8:content>
+					<v8:content>This is Linux</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ro</v8:lang>
+					<v8:content>Este LINUX</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1873,7 +2049,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>Show steps in russian</v8:content>
+					<v8:content>Show steps in Russian</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>am</v8:lang>
@@ -1888,20 +2064,20 @@
 					<v8:content>Покажи стъпки на руски</v8:content>
 				</v8:item>
 				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Zeigen Sie die Schritte auf Deutsch</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>es</v8:lang>
+					<v8:content>Mostrar los pasos en ruso</v8:content>
+				</v8:item>
+				<v8:item>
 					<v8:lang>et</v8:lang>
 					<v8:content>Näita sammud vene</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>fr</v8:lang>
 					<v8:content>Voir les étapes en russe</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>შოუ ნაბიჯები რუსულ</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Zeigen Sie die Schritte auf Deutsch</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>hu</v8:lang>
@@ -1912,12 +2088,16 @@
 					<v8:content>Mostra i passaggi in russo</v8:content>
 				</v8:item>
 				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Rādīt pasākumus latviešu, krievu</v8:content>
+					<v8:lang>ka</v8:lang>
+					<v8:content>შოუ ნაბიჯები რუსულ</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>lt</v8:lang>
 					<v8:content>Rodyti veiksmus rusų</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>lv</v8:lang>
+					<v8:content>Rādīt pasākumus latviešu, krievu</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>mn</v8:lang>
@@ -1929,15 +2109,11 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>ro</v8:lang>
-					<v8:content>Arată pașii pe rusa</v8:content>
+					<v8:content>Arată pașii in Rusa</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>sl</v8:lang>
 					<v8:content>Pokaži navodila v ruščini</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>Mostrar los pasos en ruso</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>sv</v8:lang>
@@ -1979,7 +2155,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>The parameter snippet</v8:content>
+					<v8:content>Parameter snippet</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -2009,6 +2185,12 @@
 						<dcscor:value xsi:type="v8ui:Color">web:LightGoldenRodYellow</dcscor:value>
 					</dcscor:item>
 				</dcsset:appearance>
+				<dcsset:presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заполненнный тип шага в светло-золотистый цвет</v8:content>
+					</v8:item>
+				</dcsset:presentation>
 			</dcsset:item>
 			<dcsset:item>
 				<dcsset:selection>
@@ -2017,9 +2199,17 @@
 					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:filter>
-					<dcsset:item xsi:type="dcsset:FilterItemComparison">
-						<dcsset:left xsi:type="dcscor:Field">ДеревоШагов.ТипШага</dcsset:left>
-						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ДеревоШагов.ТипШага</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ДеревоШагов.ТипШагаВДереве</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:string"/>
+						</dcsset:item>
 					</dcsset:item>
 				</dcsset:filter>
 				<dcsset:appearance>
@@ -2028,6 +2218,12 @@
 						<dcscor:value xsi:type="v8ui:Color">web:HoneyDew</dcscor:value>
 					</dcscor:item>
 				</dcsset:appearance>
+				<dcsset:presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Шаг в светло-зеленый цвет (Роса)</v8:content>
+					</v8:item>
+				</dcsset:presentation>
 			</dcsset:item>
 			<dcsset:item>
 				<dcsset:selection>
@@ -2035,19 +2231,10 @@
 						<dcsset:field>ДеревоШаговПредставлениеТеста</dcsset:field>
 					</dcsset:item>
 					<dcsset:item>
-						<dcsset:field>ДеревоШаговОписаниеШага</dcsset:field>
-					</dcsset:item>
-					<dcsset:item>
 						<dcsset:field>ДеревоШаговПолныйТипШага</dcsset:field>
 					</dcsset:item>
 					<dcsset:item>
-						<dcsset:field>ДеревоШаговИмяEPF</dcsset:field>
-					</dcsset:item>
-					<dcsset:item>
 						<dcsset:field>ДеревоШаговПредставлениеТестаОригинал</dcsset:field>
-					</dcsset:item>
-					<dcsset:item>
-						<dcsset:field>ДеревоШаговОписаниеШагаОригинал</dcsset:field>
 					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:filter>
@@ -2067,6 +2254,12 @@
 						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
 					</dcscor:item>
 				</dcsset:appearance>
+				<dcsset:presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отключение видимости колонок на уровне "ТипШага"</v8:content>
+					</v8:item>
+				</dcsset:presentation>
 			</dcsset:item>
 			<dcsset:item>
 				<dcsset:selection>
@@ -2091,6 +2284,64 @@
 						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
 					</dcscor:item>
 				</dcsset:appearance>
+				<dcsset:presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отключение видимости колонок на уровне "Описание шага"</v8:content>
+					</v8:item>
+				</dcsset:presentation>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДеревоШагов</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДеревоШагов.ТипШагаВДереве</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">Условие</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:LimeGreen</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Оформление условных шагов зеленым цветом</v8:content>
+					</v8:item>
+				</dcsset:presentation>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДеревоШагов</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ДеревоШагов.ТипШагаВДереве</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">Цикл</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:Thistle</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+				<dcsset:presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Оформление циклических шагов сиреневым цветом</v8:content>
+					</v8:item>
+				</dcsset:presentation>
 			</dcsset:item>
 		</ConditionalAppearance>
 	</Attributes>
@@ -2118,20 +2369,20 @@
 					<v8:content>Покажи превода</v8:content>
 				</v8:item>
 				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Übersetzung anzeigen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>es</v8:lang>
+					<v8:content>Ver traducción</v8:content>
+				</v8:item>
+				<v8:item>
 					<v8:lang>et</v8:lang>
 					<v8:content>Vaata tõlget</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>fr</v8:lang>
 					<v8:content>Afficher la traduction</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>შოუ თარგმანი</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Übersetzung anzeigen</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>hu</v8:lang>
@@ -2142,12 +2393,16 @@
 					<v8:content>Mostrare la traduzione</v8:content>
 				</v8:item>
 				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Rādīt tulkojums</v8:content>
+					<v8:lang>ka</v8:lang>
+					<v8:content>შოუ თარგმანი</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>lt</v8:lang>
 					<v8:content>Rodyti vertimą</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>lv</v8:lang>
+					<v8:content>Rādīt tulkojums</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>mn</v8:lang>
@@ -2159,15 +2414,11 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>ro</v8:lang>
-					<v8:content>Arată de traducere</v8:content>
+					<v8:content>Arată traducere</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>sl</v8:lang>
 					<v8:content>Kažejo, prevodi,</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>Ver traducción</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>sv</v8:lang>
@@ -2204,20 +2455,20 @@
 					<v8:content>Покажи превода</v8:content>
 				</v8:item>
 				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Übersetzung anzeigen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>es</v8:lang>
+					<v8:content>Ver traducción</v8:content>
+				</v8:item>
+				<v8:item>
 					<v8:lang>et</v8:lang>
 					<v8:content>Vaata tõlget</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>fr</v8:lang>
 					<v8:content>Afficher la traduction</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>შოუ თარგმანი</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Übersetzung anzeigen</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>hu</v8:lang>
@@ -2228,12 +2479,16 @@
 					<v8:content>Mostrare la traduzione</v8:content>
 				</v8:item>
 				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Rādīt tulkojums</v8:content>
+					<v8:lang>ka</v8:lang>
+					<v8:content>შოუ თარგმანი</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>lt</v8:lang>
 					<v8:content>Rodyti vertimą</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>lv</v8:lang>
+					<v8:content>Rādīt tulkojums</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>mn</v8:lang>
@@ -2245,15 +2500,11 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>ro</v8:lang>
-					<v8:content>Arată de traducere</v8:content>
+					<v8:content>Arată traducere</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>sl</v8:lang>
 					<v8:content>Kažejo, prevodi,</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>Ver traducción</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>sv</v8:lang>
@@ -2269,6 +2520,7 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ПоказатьПеревод</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="ВыгрузитьШагиВJSON" id="2">
 			<Title>
@@ -2278,7 +2530,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>Unload steps in JSON</v8:content>
+					<v8:content>Upload steps to JSON</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>am</v8:lang>
@@ -2293,20 +2545,20 @@
 					<v8:content>Разтоварят стъпки в JSON</v8:content>
 				</v8:item>
 				<v8:item>
+					<v8:lang>de</v8:lang>
+					<v8:content>Entladen Schritte in JSON</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>es</v8:lang>
+					<v8:content>Descargar pasos en JSON</v8:content>
+				</v8:item>
+				<v8:item>
 					<v8:lang>et</v8:lang>
 					<v8:content>Laadi samme JSON</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>fr</v8:lang>
 					<v8:content>Décharger les étapes en JSON</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>ნაბიჯები ატვირთოთ JSON</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Entladen Schritte in JSON</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>hu</v8:lang>
@@ -2317,12 +2569,16 @@
 					<v8:content>Scaricare passi in JSON</v8:content>
 				</v8:item>
 				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Izkraut soļi JSON</v8:content>
+					<v8:lang>ka</v8:lang>
+					<v8:content>ნაბიჯები ატვირთოთ JSON</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>lt</v8:lang>
 					<v8:content>Iškelkite priemonių JSON</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>lv</v8:lang>
+					<v8:content>Izkraut soļi JSON</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>mn</v8:lang>
@@ -2334,15 +2590,11 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>ro</v8:lang>
-					<v8:content>Descarcă pași în JSON</v8:content>
+					<v8:content>Salvare pași în JSON</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>sl</v8:lang>
 					<v8:content>Navodila za nalaganje JSON</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>Descargar pasos en JSON</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>sv</v8:lang>
@@ -2364,10 +2616,11 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>Unload steps in JSON</v8:content>
+					<v8:content>Upload steps to JSON</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ВыгрузитьШагиВJSON</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="НайтиШаги" id="6">
 			<Title>
@@ -2385,6 +2638,7 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Action>НайтиШаги</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
 </Form>
