@@ -323,6 +323,11 @@ Procedure ЯПерезаполняюДляОбъектаТабличнуюЧас
 	IRefillObjectTabularSection(ИмяТабличнойЧасти, Значения);
 EndProcedure
 
+&AtClient
+Procedure ЯВыполняюКодИВставляюВПеременную(Val Код, Val ИмяПеременной) Export
+	IExecuteCodeAndPutToVarible(Код, ИмяПеременной);
+EndProcedure
+
 &AtServerNoContext
 Procedure IRefillObjectTabularSectionAtServer(TabularSectionName, Values)	
 	ObjectValues = GetValueTableFromVanessaTableArray(Values);
@@ -523,17 +528,17 @@ Procedure ICheckOrCreateAccumulationRegisterRecordsAtServer(RegisterName, Values
 EndProcedure
 
 &AtClient
-Procedure IRefillConstant(Val ConstantName, Val ConstantValue) Export
-	IRefillConstantAtServer(ConstantName, ConstantValue);
+Procedure IRefillConstantByValue(Val ConstantName, Val ConstantValue) Export
+	IRefillConstantByValueAtServer(ConstantName, ConstantValue);
 EndProcedure
 
 &AtClient
-Procedure ЯПерезаполняюКонстанту(Val ИмяКонстанты, Val ЗначениеКонстанты) Export
-	IRefillConstant(ИмяКонстанты, ЗначениеКонстанты);
+Procedure ЯПерезаполняюКонстантуЗначением(Val ИмяКонстанты, Val ЗначениеКонстанты) Export
+	IRefillConstantByValue(ИмяКонстанты, ЗначениеКонстанты);
 EndProcedure
 
 &AtServerNoContext
-Procedure IRefillConstantAtServer(ConstantName, ConstantValue)
+Procedure IRefillConstantByValueAtServer(ConstantName, ConstantValue)
 	ConstantData = New Structure;
 	ConstantData.Insert("Name", ConstantName);
 	ConstantData.Insert("ValueType", Metadata.Constants[ConstantName].Type);
@@ -599,6 +604,18 @@ Procedure SelectDependentItems(Command)
 	SelectDependentItemsAtServer();
 EndProcedure
 
+&НаКлиенте
+Procedure StepsLanguageПриИзменении(Элемент)
+	FillMetadataType();
+	Для Каждого СтрокаДерева Из MetadataList.ПолучитьЭлементы() Цикл
+		Для Каждого Элем Из MetadataType Цикл
+			Если Элем.Значение = СтрокаДерева.Name Тогда
+				СтрокаДерева.Presentation = Элем.Представление;
+			КонецЕсли;	 
+		КонецЦикла;	 
+	КонецЦикла;	 
+EndProcedure
+
 #EndRegion
 
 #Region Private
@@ -645,6 +662,9 @@ Procedure FillMetadata()
 			MetadataListRow.Use = False;
 			MetadataListRow.Name = Data.Name;
 			MetadataListRow.Presentation = Data.Synonym;
+			If IsBlankString(MetadataListRow.Presentation) Then
+				MetadataListRow.Presentation = Data.Name;
+			EndIf;	
 			MetadataListRow.FullName = MetadataTypeValueSingle(MetadataListParentRow.Name)
 										+ "."
 										+ MetadataListRow.Name;
@@ -1060,8 +1080,8 @@ Procedure AddStepsByLanguage(Vanessa, AllTests, LangCode)
 	Vanessa.ДобавитьШагВМассивТестов(AllTests
 										, LocalizedStringsClient()["s7a_" + LangCode]
 										, LocalizedStringsClient()["s7b_" + LangCode]
-										, StrTemplate(ScenarioTabularSectionActionString(LangCode), LocalizedStringsClient()["s7c_" + LangCode], "", "")
-										, LocalizedStringsClient()["s7d_" + LangCode]
+										, StrTemplate(ScenarioTabularSectionActionString(LangCode), LocalizedStringsClient()["s7d_" + LangCode], "", "")
+										, LocalizedStringsClient()["s7e_" + LangCode]
 										, "");
 	Vanessa.ДобавитьШагВМассивТестов(AllTests
 										, LocalizedStringsClient()["s8a_" + LangCode]
@@ -1072,8 +1092,8 @@ Procedure AddStepsByLanguage(Vanessa, AllTests, LangCode)
 	Vanessa.ДобавитьШагВМассивТестов(AllTests
 										, LocalizedStringsClient()["s10a_" + LangCode]
 										, LocalizedStringsClient()["s10b_" + LangCode]
-										, StrTemplate(ScenarioCatalogActionString(LangCode), LocalizedStringsClient()["s10d_" + LangCode], "", "")
-										, LocalizedStringsClient()["s10d_" + LangCode]
+										, StrTemplate(ScenarioConstantActionString(LangCode), LocalizedStringsClient()["s10d_" + LangCode], LocalizedStringsClient()["s10g_" + LangCode])
+										, LocalizedStringsClient()["s10f_" + LangCode]
 										, "");
 EndProcedure
 
@@ -1579,12 +1599,21 @@ EndFunction
 &AtServer
 Function RL()
 	ReturnData = New Structure();
-	ReturnData.Insert("s1", "Constants");
-	ReturnData.Insert("s2", "Catalogs");
-	ReturnData.Insert("s3", "Documents");
-	ReturnData.Insert("s4", "Charts of characteristic types");
-	ReturnData.Insert("s5", "Information registers");
-	ReturnData.Insert("s6", "Accumulation registers");
+	If StepsLanguage = "en" Then
+		ReturnData.Insert("s1", "Constants");
+		ReturnData.Insert("s2", "Catalogs");
+		ReturnData.Insert("s3", "Documents");
+		ReturnData.Insert("s4", "Charts of characteristic types");
+		ReturnData.Insert("s5", "Information registers");
+		ReturnData.Insert("s6", "Accumulation registers");
+	Else	
+		ReturnData.Insert("s1", "Константы");
+		ReturnData.Insert("s2", "Справочники");
+		ReturnData.Insert("s3", "Документы");
+		ReturnData.Insert("s4", "Планы видов характеристик");
+		ReturnData.Insert("s5", "Регистры сведений");
+		ReturnData.Insert("s6", "Регистры накопления");
+	EndIf;	 
 	Return ReturnData;	
 EndFunction
 
@@ -1601,7 +1630,7 @@ Function LocalizedStringsServer()
 	ReturnData.Insert("s1b_en", "IRunDatabaseClean");
 	ReturnData.Insert("s1b_ru", "ЯЗапускаюОчисткуБазыДанных");
 	ReturnData.Insert("s1c_en", "And I run database clean");
-	ReturnData.Insert("s1c_ru", "Я запускаю очистку базы данных");
+	ReturnData.Insert("s1c_ru", "И Я запускаю очистку базы данных");
 	ReturnData.Insert("s1d_en", "Cleans the database");
 	ReturnData.Insert("s1d_ru", "Очищает базу данных");
 	
@@ -1676,8 +1705,10 @@ Function LocalizedStringsServer()
 	ReturnData.Insert("s7b_ru", "ЯПерезаполняюДляОбъектаТабличнуюЧасть");
 	ReturnData.Insert("s7c_en", "And I refill object tabular section %1:%2%3");
 	ReturnData.Insert("s7c_ru", "И я перезаполняю для объекта табличную часть %1:%2%3");
-	ReturnData.Insert("s7d_en", "Refills object tabular section");
-	ReturnData.Insert("s7d_ru", "Перезаполняет табличную часть объекта");
+	ReturnData.Insert("s7d_en", """TabularSectionName""");
+	ReturnData.Insert("s7d_ru", """ИмяТабличнойЧасти""");
+	ReturnData.Insert("s7e_en", "Refills object tabular section");
+	ReturnData.Insert("s7e_ru", "Перезаполняет табличную часть объекта");
 	
 	ReturnData.Insert("s8a_en", "IExecuteCodeAndPutToVarible(Code, VaribleName)");
 	ReturnData.Insert("s8a_ru", "ЯВыполняюКодИВставляюВПеременную(Код, ИмяПеременной)");
@@ -1699,18 +1730,20 @@ Function LocalizedStringsServer()
 	ReturnData.Insert("s9e_en", "Given I launch TestClient opening script or connect the existing one");
 	ReturnData.Insert("s9e_ru", "Дано Я запускаю сценарий открытия TestClient или подключаю уже существующий");
 	
-	ReturnData.Insert("s10a_en", "IRefillConstant(ConstantName, ConstantValue)");
-	ReturnData.Insert("s10a_ru", "ЯПерезаполняюКонстанту(ИмяКонстанты, ЗначениеКонстанты)");
-	ReturnData.Insert("s10b_en", "IRefillConstant");
-	ReturnData.Insert("s10b_ru", "ЯПерезаполняюКонстанту");
-	ReturnData.Insert("s10c_en", "And I refill constant %1 by ""%2""");
+	ReturnData.Insert("s10a_en", "IRefillConstantByValue(ConstantName, ConstantValue)");
+	ReturnData.Insert("s10a_ru", "ЯПерезаполняюКонстантуЗначением(ИмяКонстанты, ЗначениеКонстанты)");
+	ReturnData.Insert("s10b_en", "IRefillConstantByValue");
+	ReturnData.Insert("s10b_ru", "ЯПерезаполняюКонстантуЗначением");
+	ReturnData.Insert("s10c_en", "And I refill constant %1 by value ""%2""");
 	ReturnData.Insert("s10c_ru", "И я перезаполняю константу %1 значением ""%2""");
 	ReturnData.Insert("s10d_en", """ConstantName""");
 	ReturnData.Insert("s10d_ru", """ИмяКонстанты""");
-	ReturnData.Insert("s10e_en", "Scenario: Refill constant %1 value");
+	ReturnData.Insert("s10e_en", "Scenario: Refill constant %1 by value");
 	ReturnData.Insert("s10e_ru", "Сценарий: Перезаполнение константы %1 значением");
 	ReturnData.Insert("s10f_en", "Refill constant");
 	ReturnData.Insert("s10f_ru", "Перезаполняет константу");
+	ReturnData.Insert("s10g_en", "Value");
+	ReturnData.Insert("s10g_ru", "Значение");
 	
 	Return ReturnData;
 EndFunction
